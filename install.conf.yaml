@@ -1,0 +1,16 @@
+- clean: ["~"]
+
+- link:
+    ~/.gitconfig: gitconfig
+    ~/.ssh/config:
+      path: ssh/config
+      create: true
+    ~/.zprofile: zprofile
+    ~/.zshrc: zshrc
+    ~/.oh-my-zsh/custom:
+      path: oh-my-zsh/custom/*
+      create: true
+      glob: true
+
+- create:
+    - ~/projects/github

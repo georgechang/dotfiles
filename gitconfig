@@ -1,0 +1,43 @@
+[core]
+	editor = code --wait
+	sshcommand = ssh
+	autocrlf = true
+[user]
+	name = George Chang
+	signingkey = 4E9A3B7534AA2A34
+	email = changg@gmail.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	pl = pull
+	nuke = !git reset --hard && git clean -d -f && :
+	tree = log --graph --oneline --all
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	default = current
+[mergetool]
+	keepBackup = false
+[merge]
+	tool = vscode
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
