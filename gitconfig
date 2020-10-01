@@ -1,7 +1,7 @@
 [core]
 	editor = code --wait
 	sshcommand = ssh
-	autocrlf = true
+	autocrlf = input
 [user]
 	name = George Chang
 	signingkey = 4E9A3B7534AA2A34

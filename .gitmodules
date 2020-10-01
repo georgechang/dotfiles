@@ -7,3 +7,6 @@
 [submodule "zsh-syntax-highlighting"]
 	path = oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "spaceship-prompt"]
+	path = oh-my-zsh/custom/themes/spaceship-prompt
+	url = https://github.com/denysdovhan/spaceship-prompt
