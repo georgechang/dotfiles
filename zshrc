@@ -122,7 +122,8 @@ compctl -K _dotnet_zsh_complete dotnet
 
 export GPG_TTY=$(tty)
 eval $(ssh-agent) > /dev/null
-ssh-add > /dev/null 2>&1
+ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
+ssh-add ~/.ssh/id_rsa_perficient > /dev/null 2>&1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
