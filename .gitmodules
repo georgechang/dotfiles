@@ -16,3 +16,6 @@
 [submodule "oh-my-zsh/custom/plugins/timewarrior"]
 	path = oh-my-zsh/custom/plugins/timewarrior
 	url = https://github.com/svenXY/timewarrior
+[submodule "/home/george/.dotfiles/oh-my-zsh/custom/plugins/timewarrior"]
+	path = /home/george/.dotfiles/oh-my-zsh/custom/plugins/timewarrior
+	url = https://github.com/svenXY/timewarrior
