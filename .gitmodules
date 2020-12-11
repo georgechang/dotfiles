@@ -19,3 +19,6 @@
 [submodule "/home/george/.dotfiles/oh-my-zsh/custom/plugins/timewarrior"]
 	path = /home/george/.dotfiles/oh-my-zsh/custom/plugins/timewarrior
 	url = https://github.com/svenXY/timewarrior
+[submodule "oh-my-zsh/custom/plugins/zsh-completions"]
+	path = oh-my-zsh/custom/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions

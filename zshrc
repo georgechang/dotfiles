@@ -12,6 +12,10 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+autoload -U bashcompinit && bashcompinit
+
+source /etc/bash_completion.d/azure-cli
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -82,7 +86,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting timewarrior)
+plugins=(zsh-autosuggestions zsh-completions zsh-syntax-highlighting timewarrior)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,12 +126,12 @@ eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 eval $(/usr/bin/keychain --eval --quiet id_rsa)
 
-compctl -K _dotnet_zsh_complete dotnet
-
 eval $(ssh-agent) > /dev/null
 ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
 
 export GPG_TTY=$(tty)
+
+compctl -K _dotnet_zsh_complete dotnet
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
