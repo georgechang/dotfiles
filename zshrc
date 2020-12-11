@@ -1,20 +1,18 @@
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+eval $(/usr/bin/keychain --eval --quiet id_rsa)
+
+eval $(ssh-agent) > /dev/null
+ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
+
+export GPG_TTY=$(tty)
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
-autoload -U bashcompinit && bashcompinit
-
-source /etc/bash_completion.d/azure-cli
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -115,21 +113,24 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+autoload -U bashcompinit && bashcompinit
+
+source /etc/bash_completion.d/azure-cli
+
 _dotnet_zsh_complete()
 {
   local completions=("$(dotnet complete "$words")")
 
   reply=( "${(ps:\n:)completions}" )
 }
-
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-eval $(/usr/bin/keychain --eval --quiet id_rsa)
-
-eval $(ssh-agent) > /dev/null
-ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
-
-export GPG_TTY=$(tty)
 
 compctl -K _dotnet_zsh_complete dotnet
 
