@@ -2,13 +2,13 @@ Host ssh.dev.azure.com
     HostName ssh.dev.azure.com
     User git
 	AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_rsa_perficient
+    IdentityFile ~/.ssh/id_rsa_hexagon
 
-Host bitbucket.org
-    HostName bitbucket.org
+Host vs-ssh.visualstudio.com
+    HostName vs-ssh.visualstudio.com
     User git
 	AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_rsa_perficient
+    IdentityFile ~/.ssh/id_rsa_hexagon
 
 Host github.com
     HostName github.com

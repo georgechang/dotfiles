@@ -1,6 +1,6 @@
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-eval $(/usr/bin/keychain --eval --quiet id_rsa)
+#eval $(/usr/bin/keychain --eval --quiet id_rsa)
 
 eval $(ssh-agent) > /dev/null
 ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
@@ -84,7 +84,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-completions zsh-syntax-highlighting timewarrior)
+plugins=(zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
