@@ -25,6 +25,9 @@ fi
 # az completions
 source /etc/bash_completion.d/azure-cli
 
+# flux completions
+command -v flux >/dev/null && . <(flux completion zsh)
+
 # dotnet completions
 _dotnet_zsh_complete()
 {
